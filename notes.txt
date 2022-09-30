@@ -1,0 +1,25 @@
+Timing result for the extraLargeArray
+insert 771.094291
+append 2.069958
+
+resultsAppend
+  name: 'default',
+  time: 2.215875,
+  words: '2.22 ms',
+  preciseWords: '2.215875 ms',
+  verboseWords: '2 milliseconds 215 microseconds 875 nanoseconds'
+
+
+resultsInsert
+  name: 'default',
+  time: 777.056916,
+  words: '777 ms',
+  preciseWords: '777.056916 ms',
+  verboseWords: '777 milliseconds 56 microseconds 916 nanoseconds'
+
+  Append is slower because it starts at the index of zero, 
+  then all the values get .unshift() by one returning the length of the 
+  array. The insert method just .push() the last element adding a new element
+  from the last index.
+
+  
