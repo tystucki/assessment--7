@@ -1,4 +1,22 @@
 
+// Question Number #1 Sum Zero
+
+const addToZero = (arr) => {
+   for(let i = 0; i < arr.length; i++){
+      for(j = i + 1; j < arr.length; j++){
+         if(arr[i] + arr[j] === 0){
+            return true
+         }
+      }
+   }
+
+   return false
+}
+console.log(addToZero([3,1,5,3,-5]))
+// o(n^2) because it is a nested for-loop and we dont know how many times it will run.
+// 0(n) keeps track of arr.length
+
+
 // Question Number #2 Unique Characters
 
 const uniqueChars = (str = '') => {

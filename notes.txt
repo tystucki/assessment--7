@@ -2,20 +2,25 @@ Timing result for the extraLargeArray
 insert 771.094291
 append 2.069958
 
-resultsAppend
-  name: 'default',
-  time: 2.215875,
-  words: '2.22 ms',
-  preciseWords: '2.215875 ms',
-  verboseWords: '2 milliseconds 215 microseconds 875 nanoseconds'
+largeArray
+insert 8.158959 ms
+append 542.791 μs
 
+mediumArray
+insert 135.542 μs
+append 96.834 μs
 
-resultsInsert
-  name: 'default',
-  time: 777.056916,
-  words: '777 ms',
-  preciseWords: '777.056916 ms',
-  verboseWords: '777 milliseconds 56 microseconds 916 nanoseconds'
+smallArray
+insert 24.042 μs
+append 64.125 μs
+
+tinyArray
+insert 20.417 μs
+append 73.75 μs
+
+    The result for insert do not scale as well as the results for append.
+    In the beginning insert runs faster but as the ray increases in size
+    it becomes slower.
 
   Append is slower because it starts at the index of zero, 
   then all the values get .unshift() by one returning the length of the 
